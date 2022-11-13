@@ -52,12 +52,16 @@ class Dev(Configuration):
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        'debug_toolbar',
         'crispy_forms',
         'crispy_bootstrap5',
         'blog'
     ]
 
+    INTERNAL_IPS = ["192.168.10.226"]
+
     MIDDLEWARE = [
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
         'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.common.CommonMiddleware',
